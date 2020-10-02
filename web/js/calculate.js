@@ -66,6 +66,6 @@ export function calculate(angle, elWidth, elHeight) {
         bgPos1: bgPos1,
         bgPos2: bgPos2,
         bgHeight: bgHeight,
-        gradientOffset: gradientOffset,
+        gradientOffset: gradientOffset
     };
 }

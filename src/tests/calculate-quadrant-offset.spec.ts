@@ -8,7 +8,7 @@ import {
   BOTTOM_RIGHT,
   BOTTOM_LEFT,
   calculateQuadrant
-} from "../calculate-quadrant.js";
+} from "../calculate-quadrant";
 
 describe('calculateQuadrant()', () => {
   test('should return quadrant constant for angle', () => {

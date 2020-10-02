@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc --module ES6 --outDir ./web/js",
-    "test": "tsc --outDir ./test-dir && jest ./test-dir"
+    "clean-test": "rm -rf ./test-dir",
+    "clean-build": "rm -rf ./tsc-output",
+    "minify": "java -jar closure-compiler-v20200927.jar --js_output_file=out.js 'tsc-output/**.js'",
+    "tsc-test": "tsc -p ./ts-config.test.json",
+    "tsc-prod": "tsc -p ./ts-config.prod.json",
+    "dev": "tsc",
+    "test": "npm run clean-test && npm run tsc-test && jest ./test-dir && npm run clean-test",
+    "build": "npm run clean-build && npm run tsc-prod && npm run minify && npm run clean-build"
   },
   "author": "",
   "license": "ISC",

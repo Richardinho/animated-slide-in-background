@@ -13,9 +13,16 @@ fooEls.forEach(function (fooEl) {
     fooEl.style.setProperty('background-size', "100% " + bgHeight / elHeight * 100 + "%");
     fooEl.style.setProperty('background-position', bgPos1);
     fooEl.addEventListener('mouseenter', function () {
+        fooEl.addEventListener('transitionend', function () {
+            console.log('after mouse enter animation');
+        }, { once: true });
         fooEl.style.setProperty('background-position', bgPos2);
     });
+    console.log('HELLO RICH');
     fooEl.addEventListener('mouseleave', function () {
+        fooEl.addEventListener('transitionend', function () {
+            console.log('after mouse leave animation');
+        }, { once: true });
         fooEl.style.setProperty('background-position', bgPos1);
     });
     fooEl.style.setProperty('background-repeat', 'no-repeat');

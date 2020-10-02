@@ -8,16 +8,15 @@ export var LEFT = "left";
 export var BOTTOM = "bottom";
 export function calculateQuadrant(angle) {
     if (angle < 0) {
-        throw Error("angle must not be less than 0");
+        throw new Error("angle must not be less than 0");
     }
     else if (angle > 360) {
-        throw Error("angle must not be greater than or equal to 360");
+        throw new Error("angle must not be greater than or equal to 360");
     }
     if (angle === 0 || angle === 360) {
         return TOP;
     }
     else if (angle === 90) {
-        console.log('right');
         return RIGHT;
     }
     else if (angle === 180) {
