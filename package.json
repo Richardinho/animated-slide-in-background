@@ -1,0 +1,18 @@
+{
+  "name": "foo-slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc --module ES6 --outDir ./web/js",
+    "test": "tsc --outDir ./test-dir && jest ./test-dir"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.14"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
