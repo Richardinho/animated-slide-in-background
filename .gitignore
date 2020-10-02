@@ -3,4 +3,4 @@ out.js
 tsc-output/
 test-dir/
 node_modules/
-web/js/
+web/js/*
