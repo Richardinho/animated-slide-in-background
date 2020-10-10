@@ -1,6 +1,12 @@
 # Animated Slide In Background
 Adds a sliding background effect to HTML elements.
 
+When the user hovers over an element with this effect activated, a transition effect occurs where the first color slides out and
+is replaced by the second color.
+
+The effect can be configured with different colors, to slide in at different angles, and allows lifecyle methods to hook into 
+different stages of the animation process.
+
 ## Installation
 Install by pulling from NPM or by downloading from CDN
 ### CDN
