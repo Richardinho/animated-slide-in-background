@@ -16,21 +16,62 @@ Install by pulling from NPM or by downloading from CDN
 
 ## Usage
 
+The background effect can be bound to an element both with data attributes and manually by instantiating the
+`AnimatedSlideInBackground` class.
+
 ### Configure using HTML attributes
-fdfdfdf
+Add data attributes to configure an element and then call `autoBindElements()` to bind background effect to element.
+
+```html
+  <div
+    data-asb
+    data-asb-color="dodgerblue"
+    data-asb-angle="350"
+    class="my-element"></div>
+
+```
+
+```
+autoBindElements();
+```
 
 ### Configure using Javascript
-ddfdfdf
+Manually calling the `AnimatedSlideInBackground` class is another way of activating the
+effect, but also allows the addition of lifecyle handlers.
 
-compilation with Closure
-```
-java -jar closure-compiler-v20200927.jar --js main.js --js_output_file main-compiled.js
+```html
+  <div id="my-element"></div>
 ```
 
+```js
+  const el = document.getElementById('my-element');
+
+  function afterEnter() {
+    el.classList.add('is-visible');
+  }
+
+  function afterLeave() {
+    el.classList.remove('is-visible');
+  }
+
+  function beforeEnter() {
+    console.log('before enter');
+  }
+
+  function beforeLeave() {
+    el.classList.remove('is-visible');
+  }
+
+  const slider = new AnimatedSlideInBackground(el, {
+    angle: 60,
+    color: 'hotpink',
+    beforeEnter,
+    beforeLeave,
+    afterEnter,
+    afterLeave,
+  });
+
+
+  slider.init();
 ```
-java -jar closure-compiler-v20200927.jar --js_output_file=out.js 'web/js/**.js'
-```
-help on options for compiler
-```
-java -jar closure-compiler-v20200927.jar --help
-```
+
