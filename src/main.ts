@@ -1,43 +1,95 @@
 // have to specifically add .js suffix
 import {calculate} from './calculate.js';
 
-const fooEls: Array<HTMLElement> = <Array<HTMLElement>><any>document.querySelectorAll('[data-foo]');
-const containerEl = document.getElementById('container');
+export const autoBindElements = () => {
 
-fooEls.forEach((fooEl: HTMLElement) => {
+  if (typeof document !== 'undefined') {
+    const els: Array<HTMLElement> = <Array<HTMLElement>><any>document.querySelectorAll('[data-asb]');
 
-  const elHeight = fooEl.offsetHeight;
-  const elWidth = fooEl.offsetWidth;
-  const elBgColor = window.getComputedStyle(fooEl).backgroundColor;
+    els.forEach((el: HTMLElement) => {
+      const {asbAngle, asbColor} = el.dataset;
 
-  const {fooAngle = '45', fooColor: color = 'red'} = fooEl.dataset;
-  const angle = parseInt(fooAngle, 10);
+      const config: Partial<Config> = {};
 
-  const {bgHeight, gradientOffset, bgPos1, bgPos2} = calculate(angle, elWidth, elHeight);
+      if (asbColor) {
+        config.color = asbColor;
+      }
 
-  fooEl.style.setProperty('background-image', `linear-gradient(${angle}deg, ${color} ${gradientOffset}%, transparent 0)`);
-  fooEl.style.setProperty('background-size', `100% ${bgHeight / elHeight * 100}%`);
+      if (asbAngle) {
+        config.angle = parseInt(asbAngle, 10);
+      }
+    
+      new AnimatedSlideInBackground(el, config).init();
+    });
+  }
+};
 
-  fooEl.style.setProperty('background-position', bgPos1);
+interface Config {
+  color: string;
+  angle: number;
+  beforeEnter: () => void;
+  afterEnter: () => void;
+  beforeLeave: () => void;
+  afterLeave: () => void;
+}
 
-  fooEl.addEventListener('mouseenter', () => {
-    fooEl.addEventListener('transitionend', () => {
-      console.log('after mouse enter animation');
-    }, { once: true });
+const defaults: Config = {
+  color: 'black',
+  angle: 45,
+  beforeEnter: () => {},
+  beforeLeave: () => {},
+  afterEnter: () => {},
+  afterLeave: () => {},
+};
 
-    fooEl.style.setProperty('background-position', bgPos2);
-  });
+export class AnimatedSlideInBackground {
+  el: HTMLElement;
+  config: Config;
 
-  console.log('HELLO RICH');
-  fooEl.addEventListener('mouseleave', () => {
-    fooEl.addEventListener('transitionend', () => {
-      console.log('after mouse leave animation');
-    }, { once: true });
+  constructor(el: HTMLElement, config: Partial<Config>) {
+    this.el = el;
+    this.config = {...defaults, ...config };
+  }
 
-    fooEl.style.setProperty('background-position', bgPos1);
-  });
+  init() {
+    const elHeight = this.el.offsetHeight;
+    const elWidth = this.el.offsetWidth;
+    const elBgColor = window.getComputedStyle(this.el).backgroundColor;
 
-  fooEl.style.setProperty('background-repeat', 'no-repeat');
-  fooEl.style.setProperty('transition', 'all linear 0.4s');
 
-});
+    const {bgHeight, gradientOffset, bgPos1, bgPos2} = calculate(this.config.angle, elWidth, elHeight);
+
+    this.el.style.setProperty('background-image', `linear-gradient(${this.config.angle}deg, ${this.config.color} ${gradientOffset}%, transparent 0)`);
+    this.el.style.setProperty('background-size', `100% ${bgHeight / elHeight * 100}%`);
+
+    this.el.style.setProperty('background-position', bgPos1);
+
+    this.el.addEventListener('mouseenter', () => {
+
+      this.config.beforeEnter.apply(null);
+
+      this.el.addEventListener('transitionend', () => {
+        this.config.afterEnter.apply(null);
+      }, { once: true });
+
+      this.el.style.setProperty('background-position', bgPos2);
+    });
+
+    this.el.addEventListener('mouseleave', () => {
+
+      this.config.beforeLeave.apply(null);
+
+      this.el.addEventListener('transitionend', () => {
+
+        this.config.afterLeave.apply(null);
+
+      }, { once: true });
+
+      this.el.style.setProperty('background-position', bgPos1);
+    });
+
+    this.el.style.setProperty('background-repeat', 'no-repeat');
+    this.el.style.setProperty('transition', 'all linear 0.4s');
+  }
+}
+

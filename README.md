@@ -74,3 +74,7 @@ java -jar closure-compiler-v20200927.jar --js main.js --js_output_file main-comp
 ```
 java -jar closure-compiler-v20200927.jar --js_output_file=out.js 'web/js/**.js'
 ```
+help on options for compiler
+```
+java -jar closure-compiler-v20200927.jar --help
+```

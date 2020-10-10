@@ -1,8 +1,9 @@
 {
-  "name": "foo-slider",
+  "name": "animated-slide-in-background",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "tsc-output/main.js",
+  "type": "module",
   "scripts": {
     "clean-test": "rm -rf ./test-dir",
     "clean-build": "rm -rf ./tsc-output",
@@ -11,7 +12,7 @@
     "tsc-prod": "tsc -p ./ts-config.prod.json",
     "dev": "tsc",
     "test": "npm run clean-test && npm run tsc-test && jest ./test-dir && npm run clean-test",
-    "build": "npm run clean-build && npm run tsc-prod && npm run minify && npm run clean-build"
+    "build": "npm run clean-build && npm run tsc-prod && npm run minify"
   },
   "author": "",
   "license": "ISC",
