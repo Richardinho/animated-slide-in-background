@@ -2,17 +2,17 @@
   "name": "animated-slide-in-background",
   "version": "1.0.0",
   "description": "",
-  "main": "tsc-output/main.js",
+  "main": "dist/main.js",
   "type": "module",
+  "files": ["dist"],
   "scripts": {
-    "clean-test": "rm -rf ./test-dir",
-    "clean-build": "rm -rf ./tsc-output",
-    "minify": "java -jar closure-compiler-v20200927.jar --js_output_file=out.js 'tsc-output/**.js'",
+    "clean-test": "rm -rf ./dist",
+    "clean-build": "rm -rf ./dist",
     "tsc-test": "tsc -p ./ts-config.test.json",
     "tsc-prod": "tsc -p ./ts-config.prod.json",
     "dev": "tsc",
     "test": "npm run clean-test && npm run tsc-test && jest ./test-dir && npm run clean-test",
-    "build": "npm run clean-build && npm run tsc-prod && npm run minify"
+    "build": "npm run clean-build && npm run tsc-prod"
   },
   "author": "",
   "license": "ISC",
