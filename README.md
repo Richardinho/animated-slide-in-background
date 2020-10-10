@@ -7,6 +7,8 @@ is replaced by the second color.
 The effect can be configured with different colors, to slide in at different angles, and allows lifecyle methods to hook into 
 different stages of the animation process.
 
+There's a demo [here](https://stackblitz.com/edit/animated-slide-in-background-demo?file=index.js) on Stackblitz.
+
 ## Installation
 Install by pulling from NPM or by downloading from CDN
 ### CDN
