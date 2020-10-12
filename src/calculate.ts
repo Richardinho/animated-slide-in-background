@@ -8,9 +8,9 @@ import {
   BOTTOM_RIGHT,
   BOTTOM_LEFT,
   calculateQuadrant
-} from "./calculate-quadrant.js";
-import {calculateBackgroundHeight} from './calculate-background-height.js'
-import {calculateGradientOffset} from './calculate-gradient-offset.js';
+} from "./calculate-quadrant";
+import {calculateBackgroundHeight} from './calculate-background-height'
+import {calculateGradientOffset} from './calculate-gradient-offset';
 
 export function calculate(angle: number, elWidth: number, elHeight: number) {
 

@@ -13,7 +13,7 @@ There's a demo [here](https://stackblitz.com/edit/animated-slide-in-background-d
 Install by pulling from NPM or by downloading from CDN
 ### CDN
 ```
-  <script src="cdn.blahblah.js" integrity="dfdfdfd" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/animated-slide-in-background@1.0.5/dist/main.js" integrity="" crossorigin="anonymous"></script>
 
 ```
 ### NPM

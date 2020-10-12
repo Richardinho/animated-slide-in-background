@@ -1,6 +1,7 @@
 closure-compiler-**
-out.js
-tsc-output/
 test-dir/
 node_modules/
 web/js/*
+umd/
+dist/
+*.swo
