@@ -2,3 +2,4 @@ test-dir/
 node_modules/
 web/js/*
 dist/
+.DS_Store
