@@ -10,21 +10,21 @@ different stages of the animation process.
 There's a demo [here](https://stackblitz.com/edit/animated-slide-in-background-demo?file=index.js) on Stackblitz.
 
 ## Installation
-Install by pulling from NPM or by downloading from CDN
-### CDN
-```
-  <script src="https://unpkg.com/animated-slide-in-background@1.0.5/dist/main.js" integrity="" crossorigin="anonymous"></script>
-
-```
+Install by pulling from NPM or by getting from CDN
 ### NPM
 ```
   npm i animated-slide-in-background
 
 ```
+### CDN
+```
+  <script src="https://unpkg.com/animated-slide-in-background@1.0.8/dist/main.js" integrity="" crossorigin="anonymous"></script>
+
+```
 
 ## Usage
 
-The background effect can be bound to an element both with data attributes and manually by instantiating the
+The background effect can be bound to an element both with data attributes, and manually by instantiating the
 `AnimatedSlideInBackground` class.
 
 ### Configure using HTML attributes
