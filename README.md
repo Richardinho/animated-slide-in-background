@@ -7,7 +7,9 @@ is replaced by the second color.
 The effect can be configured with different colors, to slide in at different angles, and allows lifecyle methods to hook into 
 different stages of the animation process.
 
-There's a demo [here](https://stackblitz.com/edit/animated-slide-in-background-demo?file=index.js) on Stackblitz.
+## Demos
+There's a [Stackblitz](https://stackblitz.com/edit/animated-slide-in-background-demo?file=index.js) which shows the library used as a module. 
+There's also a [JSFiddle](https://jsfiddle.net/Richardinho/jgby09k1/) which demonstrates the library being used from a CDN.
 
 ## Installation
 Install by pulling from NPM or by getting from CDN
