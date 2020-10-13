@@ -12,8 +12,7 @@ export function calculateQuadrant(angle: number) {
     throw new Error("angle must not be less than 0");
   } else if (angle > 360) {
     throw new Error("angle must not be greater than or equal to 360");
-  }
-  if (angle === 0 || angle === 360) {
+  } else if (angle === 0 || angle === 360) {
     return TOP;
   } else if (angle === 90) {
     return RIGHT;

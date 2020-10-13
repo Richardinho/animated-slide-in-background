@@ -1,26 +1,19 @@
 {
   "name": "animated-slide-in-background",
   "version": "1.0.7",
-  "description": "",
+  "description": "Adds a slide in background effect to your DOM elements",
   "repository": "github:Richardinho/animated-slide-in-background",
   "main": "dist/main.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "webpack": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "clean-test": "rm -rf ./dist",
-    "clean-build": "rm -rf ./dist",
-    "minify": "java -jar closure-compiler-v20200927.jar --generate_exports --js_output_file=umd/animated-slide-in-background.minify.js 'dist/**.js'",
     "tsc-test": "tsc -p ./ts-config.test.json",
-    "tsc-prod": "tsc -p ./ts-config.prod.json",
-    "dev": "tsc",
-    "test": "npm run clean-test && npm run tsc-test && jest ./test-dir && npm run clean-test",
-    "build": "npm run clean-build && npm run tsc-prod && npm run minify",
-    "foo": "java -jar closure-compiler-v20200927.jar  --isolation_mode IIFE --js_output_file=foo.js --js foo-src/**.js",
-    "help": "java -jar closure-compiler-v20200927.jar --help"
+    "test": "npm run clean-test && npm run tsc-test && jest ./test-dir && npm run clean-test"
   },
-  "author": "",
+  "author": "Richard Hunter",
   "license": "ISC",
   "dependencies": {
     "@types/jest": "^26.0.14"

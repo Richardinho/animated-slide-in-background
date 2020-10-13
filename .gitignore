@@ -1,7 +1,4 @@
-closure-compiler-**
 test-dir/
 node_modules/
 web/js/*
-umd/
 dist/
-*.swo
