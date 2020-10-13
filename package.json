@@ -1,6 +1,6 @@
 {
   "name": "animated-slide-in-background",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Adds a slide in background effect to your DOM elements",
   "repository": "github:Richardinho/animated-slide-in-background",
   "main": "dist/main.js",

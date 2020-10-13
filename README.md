@@ -18,13 +18,13 @@ Install by pulling from NPM or by getting from CDN
 ```
 ### CDN
 ```
-  <script src="https://unpkg.com/animated-slide-in-background@1.0.8/dist/main.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/animated-slide-in-background@1.0.9/dist/main.js" integrity="" crossorigin="anonymous"></script>
 
 ```
 
 ## Usage
 
-The background effect can be bound to an element both with data attributes, and manually by instantiating the
+The background effect can be bound to an element both with data attributes and manually by instantiating the
 `AnimatedSlideInBackground` class.
 
 ### Configure using HTML attributes
