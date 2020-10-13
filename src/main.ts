@@ -1,4 +1,3 @@
-// have to specifically add .js suffix
 import {calculate} from './calculate';
 
 export const autoBindElements = () => {
@@ -93,5 +92,3 @@ export class AnimatedSlideInBackground {
   }
 }
 
-const foo = 'this is foo';
-console.log(foo);
